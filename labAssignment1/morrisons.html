@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  </head>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg my-0 border-bottom first-header">
+      <div class="container-fluid ">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(43, 226, 147);">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+          <ul class="navbar-nav me-auto  mb-lg-0">
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4 " aria-current="page" href="#">Morrisons.com</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4 " aria-current="page" href="#">Groceries Home</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Morrisons More</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Delivery Pass</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Market Street</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Travel Money</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Inspiration</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Store Finder</a>
+              </li>
+              <li class="nav-item first-header-item">
+                  <a class="nav-link pe-4" href="#">Help Hub & FAQs</a>
+              </li>
+          </ul>
+       </div>
+      </div>
+   </nav>
+   
+   
+   <div class="container ">
+     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+       <button class="btn border border-dark-subtle bg-light fw-bolder text-success  me-md-0 my-2 rounded-1 " type="submit"><i class="fa-solid fa-user pe-1 text-warning"></i>Log in</button>
+       <button class="btn border border-dark-subtle bg-light fw-bolder text-success me-md-5 ms-0 my-2 rounded-1"  type="submit">Register</button>
+       <button class="btn border border-secondary-subtle bg-secondary text-white  fw-bolder fs-6 btn-xl  my-2 rounded-1" type="submit">CHECKOUT</button>
+     </div>
+   </div>
+    <nav  id="secondNav" class="navbar navbar-expand-lg  ">
+      <div class="container-fluid  py-0 mx-0">
+        <img src=".//images/morrisonsLogo.png" class="rounded float-start ms-md-5  " alt="morrisons logo" width="200px">
+        <form class="d-flex position-relative  py-0 ms-md-0 mb-5 mb-0" role="search" >
+          <i class="fa-solid fa-magnifying-glass position-absolute pt-4  text-warning "></i>
+          <input  class="form-control rounded-0 me-md-0 ps-5 py-3 " type="search" placeholder="Find a Product" aria-label="Search" >
+          <button  class="btn text-white searchButton bg-success rounded-0 me-md-5 ms-md-0 " type="submit">Go</button>
+        </form>
+        <button id="cartButton" class="btn border border-dark-subtle  bg-light btn-xl border border-dark-subtle fs-6 fw-bolder mb-md-5 mt-md-0 rounded-1" width="200px" type="submit"><span class="text-secondary">£<b>0</b>.00</span>
+          <span class="text-secondary">Savings £0.00</span><i class="fa-solid fa-cart-shopping text-secondary"></i></button>
+
+      </div>
+    </nav>
+    <nav  id="thirdNav"class="navbar navbar-expand-lg sticky-top d-flex justify-content-start ">
+      <div class="container-fluid d-flex justify-content-evenly">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex align-items-center" id="navbarNavDropdown">
+          <ul class="navbar-nav d-flex align-items-center   fw-bold">
+            <li class="nav-item-nav ">
+              <i id="menu " class="fa-solid fa-bars text-warning me-md-1 "></i>
+             </li>
+            <li class="nav-item-nav">
+              <a class="nav-link ms-md-0 text-light " href="#">Shop Grocries</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-warning ms-md-5 me-md-0 " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              </a>
+            </li>
+            <li class="nav-item-nav ">
+              <i id="favourite" class="fa-solid fa-heart border-start border-2 ps-2 ms-md-0 "></i>
+            </li>
+            <li class="nav-item-nav">
+              <a class="nav-link text-light   me-md-5"  href="#">Favourites</a>
+            </li>
+            <li class="nav-item-nav ">
+              <i id="offer" class="fa-solid fa-gear border-start border-2 ps-2 ms-md-5 "></i>
+            </li>
+            <li class="nav-item-nav">
+              <a class="nav-link text-light  me-md-5" href="#">Offers</a>
+            </li>
+            <li class="nav-item-nav ">
+              <i  id="inspiration"class="fa-solid fa-calendar-day border-start border-2 ps-2 ms-md-5 "></i>
+             </li>
+            <li class="nav-item-nav">
+              <a class="nav-link text-light me-md-5" href="#">Inspiration</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-warning   " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              </a>
+            </li>
+            <li class="nav-item-nav ">
+              <i id="recipes" class="fa-solid fa-utensils border-start border-2 ps-2 ms-md-0"></i>
+            </li>
+            <li class="nav-item-nav">
+              <a class="nav-link text-light me-md-5" href="#">Recipes</a>
+            </li>
+            <li class="nav-item-nav ">
+              <i id="delivery" class="fa-solid fa-truck border-start border-2 ps-2 ms-md-5"></i>
+            </li>
+            <li class="nav-item-nav">
+              <a class="nav-link text-light me-md-5" href="#">Delivery Pass</a>
+            </li>
+            <li class="nav-item-nav ">
+              <i id="price" class="fa-solid fa-sterling-sign border-start border-2 ps-2  ms-md-5"></i>
+             </li>
+            <li class="nav-item-nav">
+              <a class="nav-link text-light me-md-5" href="#">Price Match</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide  position-relative"data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner ">
+        <div class="carousel-item active">
+          <img src=".//images/sliderImage1.avif" class="d-block w-100" alt="firstPicture">
+        </div>
+        <div class="carousel-item">
+          <img src=".//images/sliderImage2.avif" class="d-block w-100" alt="secondPicture">
+        </div>
+        <div class="carousel-item">
+          <img src=".//images/sliderImage3.avif" class="d-block w-100" alt="thirdPicture">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      
+    </div>
+    <div class="welcome-box position-absolute rounded-3 " height="270px" width="360px">
+      <div class="card p-4 bg-light">
+        <h2 class="text-success mt-0 mb-0">Welcome to  <B>Morrisons</B></h2>
+        <h3 class="text-success ">Grocries Online</h3>
+        <p class="ps-4 mb-2">Food, drink, and more to your door.</p>
+        <button class="btn btn-warning  mt-0 rounded-0 text-success fs-6" >START YOUR FIRST SHOP</button>
+        <button class="btn text-success border-success mt-3 bg-light fs-6 rounded-0 "><i class="fa-solid fa-user pe-2 text-warning"></i>ALREADY A CUSTOMER? LOG IN</button>
+      </div>
+    </div>
+    <nav class="navbar bg-secondary-subtle py-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <h3 class=" mb-4 ">More Reasons To Shop At Morrisons</h3>
+      <div class="row">
+        
+        <div class="col-md-3">
+          <div class="card h-130 ">
+            <img src=".//images/moreCard.jpg" class="card-img-top" alt="More Card Prices">
+            <div class="card-body">
+              <h6 class="card-title ">More Card Prices</h6>
+              <p class="card-text text-light-emphasis pb-5">Got A More Card? Get Lower Prices. Sign Up Today!</p>
+              <a href="#" class="card-link text-success text-decoration-none" >Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-3">
+          <div class="card h-130">
+            <img src=".//images/priceMatch.jpg" class="card-img-top" alt="Price Match">
+            <div class="card-body">
+              <h6 class="card-title">Price Match</h6>
+              <p class="card-text text-light-emphasis">Your Weekly Essentials Priced Match To Aldi And Lidl, Whichever Is Cheaper.Click here for more savings on essentials</p>
+              <a href="#" class="card-link text-success text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+       
+        <div class="col-md-3">
+          <div class="card h-130">
+            <img src=".//images/marketStreet.jpg" class="card-img-top" alt="Market Street">
+            <div class="card-body">
+              <h6 class="card-title">Market Street</h6>
+              <p class="card-text text-light-emphasis pb-5">Click Here To View Our Online Market Street Range.</p>
+              <a href="#" class="card-link text-success text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+       
+        <div class="col-md-3">
+          <div class="card h-130">
+            <img src=".//images/homeDelivery.jpg" class="card-img-top" alt="Home Delivery">
+            <div class="card-body">
+              <h6 class="card-title">Home Delivery slots from £1.50</h6>
+              <p class="card-text text-light-emphasis pb-5">We've cut the price of selected delivery slots. Book from just £1.50!</p>
+              <a href="#" class="card-link text-success text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="container my-5">
+      <h3 class=" mb-4">Let us help</h3>
+    
+      <div class="row g-4">
+       
+        <div class="col-md-6  ">
+          <div class="custom-card d-flex align-items-center   rounded-2 pt-1 ps-4">
+            <div class="flex-grow-1 text-white">
+              <p class=" pb-5 ">Enjoy personalised offers, discount vouchers and helpful services at your fingertips with Morrisons More.</p>
+              <a href="#" class="text-white text-decoration-none">Sign Up Today <i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+            <img src=".//images/helpImag1.png " alt="More Card Image">
+          </div>
+        </div>
+    
+        
+        <div class="col-md-6">
+          <div class="custom-card d-flex align-items-center card-2  rounded-2 ps-4 ">
+            <div class="flex-grow-1 text-white">
+              <p class=" pb-5 ">Find your nearest store, information on opening hours and more, using our Store Finder.</p>
+              <a href="#" class="text-white text-decoration-none ">Store Finder <i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+            <img src=".//images/helpImage2.png" alt="Store Finder Image">
+          </div>
+        </div>
+    
+        
+        <div class="col-md-6 ">
+          <div class="custom-card d-flex align-items-center    rounded-2  pt-1 ps-4">
+            <div class="flex-grow-1 text-white">
+              <p class=" pb-5 ">Find help, information and FAQs in relation to your online order.</p>
+              <a href="#" class="text-white text-decoration-none">Help Hub & Contact Us <i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+            <img src=".//images/helpImage3.png" alt="Help Hub Image">
+          </div>
+        </div>
+    
+        
+        <div class="col-md-6  ">
+          <div class="custom-card d-flex align-items-center   rounded-2  pt-1 ps-4">
+            <div class="flex-grow-1 text-white">
+              <p class=" pb-5 ">Discover all the ways we deliver food and more to your door.</p>
+              <a href="#" class="text-white text-decoration-none">More Ways To Shop <i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+            <img src=".//images/helpImage4.png" alt="Delivery Image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <h3 class=" mb-4">Browse by Aisle</h3>
+    
+      <div class="row g-4 ms-md-5 me-md-2 ">
+       
+        <div class="col-md-2  ">
+          <div class="browse-card d-flex flex-column     pt-1 ps-4 rounded-circle">
+            <div class="flex-grow-1 text-white  align-items-center pb-5 p">
+              <img class="pe-3 pt-3" src=".//images/cake.png" alt="Delivery Image">
+            </div>
+            <p >Cakes & Bakes</p>
+          </div>
+        </div>
+    
+        
+        <div class="col-md-2  ">
+          <div class="browse-card d-flex flex-column     pt-1 ps-4 rounded-circle">
+            <div class="flex-grow-1 text-white  align-items-center pb-5">
+              <img class="pe-3 pt-3" src=".//images/vegetarian.png" alt="Delivery Image">
+            </div>
+            <p >Vegetarian</p>
+          </div>
+        </div>
+    
+        
+        <div class="col-md-2  ">
+          <div class="browse-card d-flex flex-column     pt-1 ps-4 rounded-circle">
+            <div class="flex-grow-1 text-white  align-items-center pb-5">
+              <img class="pe-3 pt-3" src=".//images/wine.png" alt="Delivery Image">
+            </div>
+            <p >Wine & Spirits</p>
+          </div>
+        </div>
+    
+        
+        <div class="col-md-2  ">
+          <div class="browse-card d-flex flex-column   pt-1 ps-4 rounded-circle">
+            <div class="flex-grow-1 text-white  align-items-center pb-5">
+              <img class="pe-3 pt-3" src=".//images/food.png" alt="Delivery Image">
+            </div>
+            <p >Food Cupboard</p>
+          </div>
+        </div>
+        
+        <div class="col-md-2  ">
+          <div class="browse-card d-flex flex-column    pt-1 ps-4 rounded-circle">
+            <div class="flex-grow-1 text-white  align-items-center pb-5">
+              <img  class="pe-3 pt-3"src=".//images/drink.png" alt="Delivery Image">
+            </div>
+            <p class="ps-4">Drink</p>
+          </div>
+        </div>
+        
+        <div class="col-md-2  ">
+          <div class="browse-card d-flex flex-column    pt-1 ps-4  rounded-circle">
+            <div class="flex-grow-1 text-white  align-items-center pb-5">
+              <img class="pe-3 pt-3 w-100" src=".//images/laundry.png" alt="Delivery Image">
+            </div>
+            <p >Household Laundry</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <h3 class=" mb-4 pt-4">Ideas and Inspiration</h3>
+      <div class="row me-md-5 ms-md-0">
+        
+        <div class="col-md-4 ps-1">
+          <div class="ideas-card rounded-2  border border-light-subtle">
+            <img src=".//images/pic1.jpg" class="card-img-top" alt="More Card Prices">
+            <div class="card-body ps-4 pt-3">
+              <h6 class="card-title fs-6 text-success fw-lighter">Price Match</h6>
+              <p class="card-text text-light-emphasis pb-4">Your weekly essentials price matched to Aldi and Lidl, whichever is cheaper. Click here for more savings on the essentials!</p>
+              <a href="#" class="card-link text-success fw-bolder text-decoration-none" >Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-4 ps-1">
+          <div class="ideas-card  rounded-2  border border-light-subtle ">
+            <img src=".//images/pic2.jpg" class="card-img-top" alt="Price Match">
+            <div class="card-body ps-4 pt-3">
+              <h6 class="card-title fs-6 text-success fw-lighter">Market Street</h6>
+              <p class="card-text text-light-emphasis">At Morrisons, we source more direct from British Farmers, Growers & Fisheries than any other supermarket. Working directly with over 2,700 farmers.</p>
+              <a href="#" class="card-link text-success fw-bolder text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-4 me-md-0 ">
+          <div class="large-ideas-card rounded-2  border border-light-subtle">
+            <img src=".//images/pic3.jpg" class="card-img-top" alt="Market Street">
+            <div class="card-body ps-4 pt-3">
+              <h6 class="card-title fs-6 text-success fw-lighter">Summer Recipes</h6>
+              <p class="card-text text-light-emphasis pb-1">Need more dining inspo? Explore our fresh Summer Recipe ideas and treat yourself to some seriously good Stuffed Chicken Skewers, and so much more. Enjoy with our fresh summer deals.</p>
+              <a href="#" class="card-link text-success fw-bolder text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-md-4 ps-1 ">
+          <div class="ideas-card  rounded-2  mt-3 border border-light-subtle">
+            <img src=".//images/pic4.jpg" class="card-img-top" alt="Home Delivery">
+            <div class="card-body ps-4 pt-3">
+              <h6 class="card-title fs-6 text-success fw-lighter">Summer Shop</h6>
+              <p class="card-text text-light-emphasis pb-4">More tasty BBQ essentials and bits for picky teas. Our Summer Shop has everything you need to make memories outdoors.</p>
+              <a href="#" class="card-link text-success fw-bolder text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="ideas-card rounded-2   mt-3  border  border-light-subtle">
+            <img src=".//images/pic5.jpg" class="card-img-top" alt="Home Delivery">
+            <div class="card-body ps-4 pt-3">
+              <h6 class="card-title fs-6 text-success fw-lighter">Quick And Easy Meal For Less</h6>
+              <p class="card-text text-light-emphasis pb-4">Mix things up with quick and easy recipes from takeaways to meat and fish recipes. We ve got all the recipe inspo you need.</p>
+              <a href="#" class="card-link text-success fw-bolder text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+       
+        <div class="col-md-4">
+          <div class="large-ideas-card rounded-2  mt-3 border border-light-subtle">
+            <img src=".//images/pic6.png" class="card-img-top" alt="Home Delivery">
+            <div class="card-body ps-4 pt-3">
+              <h6 class="card-title fs-6 text-success fw-lighter">More Stocking Up While Staying Put</h6>
+              <p class="card-text text-light-emphasis pb-4">Find more of the products you buy every week, delivered straight to your home. More fresh deliveries with no surprises.</p>
+              <a href="#" class="card-link text-success fw-bolder text-decoration-none">Find out more<i class="fa-solid fa-chevron-right ms-md-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar bg-light text-end pt-2 mt-3">
+      <div class="container "> 
+        <div class="d-flex justify-content-end h-100 w-100">
+          <a href="#" class="back-to-top pt-3 text-secondary text-decoration-none">Back to top <i class="fa-solid fa-arrow-up-long ps-1"></i></a>
+        </div>
+      </div>
+    </nav>
+    
+   
+    <footer class="footer bg-secondary">
+      <div class="container ">
+        <img class="" src=".//images/morrisonsLogo.png">
+          <div class="text-center mt-0 ms-md-5 ps-5 mt-0">
+            
+            <div class="social-icons ms-5 d-flex justify-content-end ">
+              <div class="socialLink rounded-circle bg-warning pt-1 mx-1 "><a href="#" target="_blank"><i class="fab fa-facebook-f text-secondary"></i></a></div>
+              <div class="socialLink rounded-circle bg-warning pt-1 mx-1"><a href="#" target="_blank"><i class="fab fa-twitter text-secondary"></i></a></div>
+              <div class="socialLink rounded-circle bg-warning pt-1 mx-1"><a href="#" target="_blank"><i class="fab fa-instagram text-secondary"></i></a></div>
+              <div class="socialLink rounded-circle bg-warning pt-1 mx-1"><a href="#" target="_blank"><i class="fab fa-youtube text-secondary"></i></a></div>
+            </div>
+          </div>
+        <div class="row ">
+          
+          
+          <div class="col-md-2 ">
+            <h6 class="text-warning fw-bold">Our Main Sites</h5>
+            <ul class="list-unstyled fw-lighter">
+              <li class="text-white"><a class="text-white"href="#">Recipes</a></li>
+              <li><a class="text-white"href="#">Food to Order</a></li>
+              <li><a class="text-white"href="#">Morrisons More</a></li>
+              <li><a class="text-white"href="#">Morrisons Gift Cards</a></li>
+            </ul>
+          </div>
+          
+         
+          <div class="col-md-2">
+            <h6 class="text-warning fw-bold">Help & Information</h5>
+            <ul class="list-unstyled ">
+              <li><a class="text-white "href="#">Contact Us</a></li>
+              <li><a class="text-white" href="#">Store Finder</a></li>
+              <li><a class="text-white" href="#">Store Services</a></li>
+              <li><a class="text-white"href="#">FAQs</a></li>
+              <li><a class="text-white"href="#">Scottish Alcohol Pricing</a></li>
+              <li><a class="text-white"href="#">welsh Alcohol Pricing</a></li>
+              <li><a class="text-white"href="#">Keeping Safe Online</a></li>
+              <li><a class="text-white"href="#">Product Recalls</a></li>
+            </ul>
+          </div>
+          
+        
+          <div class="col-md-2">
+            <h6 class="text-warning fw-bold">Corporate</h5>
+            <ul class="list-unstyled">
+              <li><a class="text-white"href="#">About Us</a></li>
+              <li><a class="text-white"href="#">Corporate Responsibility</a></li>
+              <li><a class="text-white"href="#">Investor Centre</a></li>
+              <li><a class="text-white"href="#">Careers</a></li>
+              <li><a class="text-white"href="#">Modern Slavery Statement</a></li>
+              <li><a class="text-white"href="#">Cruelty Free - Leaping Bunny</a></li>
+            </ul>
+          </div>
+          
+         
+          <div class="col-md-2 ">
+            <h6 class="text-warning fw-bold">Terms</h5>
+            <ul class="list-unstyled">
+              <li><a class="text-white" href="#">Terms of Use</a></li>
+              <li><a class="text-white"href="#">Terms & Conditions</a></li>
+              <li><a class="text-white"href="#">Privacy Policy</a></li>
+              <li><a class="text-white"href="#">Cookie Policy</a></li>
+              <li><a class="text-white"href="#">WEEE Regulations and Battery Recycling</a></li>
+              <li><a class="text-white"href="#">Accessibility</a></li>
+            </ul>
+          </div>
+          <p class="copyright pt-3 mb-0 pb-0 text-light-emphasis fw-lighter"> @2024 All rights reserved. Wm Morrisons Supermarket Limited</p>
+        </div>
+      </div>
+    </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ </body>
+</html>
