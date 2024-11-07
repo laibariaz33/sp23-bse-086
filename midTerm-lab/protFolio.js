@@ -36,20 +36,33 @@ function showPictures() {
     $("#pictures-info").html(pictureHtml);
 }
 
-// Function to show description
+// Function to load description from file based on selected project
 function showDescription() {
     const selectedProject = $("#project-dropdown").val();
-    let descriptionText = '';
+    let fileName = '';
 
     if (selectedProject === 'Project One') {
-        descriptionText = 'This is a detailed description of Project One.';
+        fileName = 'project1.txt';
     } else if (selectedProject === 'Project Two') {
-        descriptionText = 'This is a detailed description of Project Two.';
+        fileName = 'project2.txt';
     } else if (selectedProject === 'Project Three') {
-        descriptionText = 'This is a detailed description of Project Three.';
+        fileName = 'project3.txt';
+    } else {
+        $("#description-info").html('<strong>Select a project to view its description.</strong>');
+        return;
     }
 
-    $("#description-info").html(`<strong>Description:</strong> ${descriptionText}`);
+   
+    $.ajax({
+        url: fileName,
+        dataType: 'text',
+        success: function(data) {
+            $("#description-info").html(`<strong>Description:</strong> ${data}`);
+        },
+        error: function() {
+            $("#description-info").html('<strong>Error loading description.</strong>');
+        }
+    });
 }
 
 // Event listeners for dropdown changes
