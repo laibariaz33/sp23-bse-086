@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/css/portFolio.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="./images/projectImage2.png" alt="Small Image" class="sidebar-image">
+        <div class="portfolio-description">
+            <ul>
+                <li>
+                    <label for="project-dropdown">Project Name</label>
+                    <select id="project-dropdown" onchange="showProjectName()">
+                        <option value="">Select Project</option>
+                        <option value="Project One">Project One</option>
+                        <option value="Project Two">Project Two</option>
+                        <option value="Project Three">Project Three</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="summary-dropdown">Summary</label>
+                    <select id="summary-dropdown" onchange="showSummary()">
+                        <option value="">Select Summary</option>
+                        <option value="Summary One">Summary for Project One</option>
+                        <option value="Summary Two">Summary for Project Two</option>
+                        <option value="Summary Three">Summary for Project Three</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="pictures-dropdown">Pictures</label>
+                    <select id="pictures-dropdown" onchange="showPictures()">
+                        <option value="">Select Pictures</option>
+                        <option value="Pictures One">Pictures for Project One</option>
+                        <option value="Pictures Two">Pictures for Project Two</option>
+                        <option value="Pictures Three">Pictures for Project Three</option>
+                    </select>
+                </li>
+                <li>
+                    <button id="show-description">View Description</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="project-info"></div>
+        <div id="summary-info"></div>
+        <div id="pictures-info"></div>
+        <div id="description-info"></div> 
+    </div>
+
+    <script src="/js/protFolio.js"></script>
+</body>
+</html>
