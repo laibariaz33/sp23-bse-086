@@ -6,6 +6,8 @@ const server = express();
 const Product = require('./models/products'); // Ensure this path is correct
 const Category = require('./models/categories'); // Ensure this path is correct
 
+
+
 // Set EJS as the view engine
 server.set('view engine', 'ejs');
 
@@ -14,9 +16,14 @@ server.use(expressEjsLayouts);
 
 // Serve static files (like images, CSS, JS)
 server.use(express.static(path.join(__dirname, 'public')));
+server.set('views', path.join(__dirname, 'views'));
+
 
 // Middleware to parse URL-encoded bodies (for forms)
 server.use(express.urlencoded({ extended: true }));
+
+const groceriesRouter = require('./routes/user/user.products.controller'); // Adjust path as necessary
+server.use('/', groceriesRouter);
 
 // Home page route
 server.get('/', async (req, res) => {
