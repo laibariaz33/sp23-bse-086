@@ -1,0 +1,2 @@
+projectName: Project One
+description: This is a detailed description of Project One. Lorem ipsum dolor sit amet, consectetur adipiscing elit.this is description of semester wise project

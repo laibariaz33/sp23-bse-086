@@ -1,0 +1,2 @@
+projectName: Project Two
+description: This is a detailed description of Project Two. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.this is description of semester wise project
