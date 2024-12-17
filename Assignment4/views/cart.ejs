@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Your Cart</h2>
+    <% if (cart && cart.length > 0) { %>
+      <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% cart.forEach(item => { %>
+      <tr data-id="<%= item.id %>">
+        <td><img src="<%= item.image %>" alt="<%= item.name %>" width="50"></td>
+        <td><%= item.name %></td>
+        <td>Rs.<%= item.price %></td>
+        <td><%= item.quantity %></td>
+        <td>Rs.<%= (item.price * item.quantity).toFixed(2) %></td>
+        <td>
+          <button class="btn btn-danger remove-item-btn">Remove</button>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+    <% } else { %>
+      <p>Your cart is empty.</p>
+    <% } %>
+    <a href="/GrocriesHome" class="btn btn-secondary my-5">Continue Shopping</a>
+    <a href="/checkout" class="btn btn-secondary my-5" id="checkout-btn">Checkout</a>
+
+
+  </div>
+  <script>document.addEventListener("DOMContentLoaded", () => {
+    const removeButtons = document.querySelectorAll('.remove-item-btn');
+  
+    removeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const row = button.closest('tr'); 
+        const productId = row.getAttribute('data-id');  
+  
+        fetch('/remove-from-cart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: productId }), 
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            
+            const cartCountElement = document.getElementById('cart-count');
+            cartCountElement.textContent = data.cartCount;
+  
+           
+            row.remove();
+  
+            
+            if (data.cart.length === 0) {
+              document.querySelector('table').innerHTML = '<p>Your cart is empty.</p>';
+            }
+          } else {
+            alert('Failed to remove product from cart');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      });
+    });
+  });
+  </script>
+</body>
+</html>
