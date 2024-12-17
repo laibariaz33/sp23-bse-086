@@ -18,13 +18,13 @@
         <li class="breadcrumb-item">
             <a href="/">Home </a>
             >
-            <a  href="/GrocriesHome">Grocries Home</a>
+            <a  href="/bakeryItems">Bakery</a>
         </li>
     </ol>
 </nav>
   
   <div class="container my-5">
-    <h2 class="mb-4">Grocries Items</h2>
+    <h2 class="mb-4">Bakery Items</h2>
     
     <!-- Filter and Sort Section -->
     <div class="d-flex justify-content-between   mb-4">
@@ -53,47 +53,22 @@
       </div>
     </div>
 
-    <div class="container my-5">
-      <% if (productsByCategory && Object.keys(productsByCategory).length > 0) { %>
-        <% for (let category in productsByCategory) { %>
-          <div class="container mt-5">
-            <h2 class="mb-4"><%= category %></h2> <!-- Category Title -->
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-              <% productsByCategory[category].forEach(product => { %>
-                <div class="col">
-                  <div class="product-card">
-                    <div class="product-image-container">
-                      <img
-                        class="prod-img img-fluid"
-                        src="<%= product.image %>"
-                        alt="<%= product.name %>"
-                      />
-                    </div>
-                    <div class="product-info">
-                      <h5 class="product-name"><%= product.name %></h5>
-                      <p class="product-price">
-                        <% if (product.originalPrice) { %>
-                          <del>Rs.<%= product.originalPrice %></del>
-                        <% } %>
-                        <strong>Rs.<%= product.price %></strong>
-                      </p>
-                      <button class="btn btn-custom">ADD TO BAG</button>
-                    </div>
-                  </div>
-                </div>
-              <% }) %>
+    <!-- Product Cards -->
+    <div class="row">
+      <% bakeryItems.forEach(product => { %>
+        <div class="col-6 col-sm-2 col-md-3 mb-5 ">
+          <div class="product-card border border-secondary" style="width: 19rem;">
+            <img class="card-img-top img-fluid" src="<%= product.image %>" alt="<%= product.name %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.name %></h5>
+              <p class="card-text">Rs.<%= product.price %></p>
+              <a href="#" class="btn btn-custom">ADD TO BAG</a>
             </div>
           </div>
-        <% } %>
-      <% } else { %>
-        <p>No products found for any category.</p>
-      <% } %>
+        </div>
+      <% }); %>
     </div>
-    
-    
-    
-    
-    
+  </div>
 
   <ul class="pagination justify-content-center p-3">
     <!-- Previous Button -->
