@@ -42,9 +42,7 @@ router.get('/admin/categories/edit/:id', async(req, res) => {
   try{
       let category = await Category.findById(req.params.id).populate('products');
       let products = await product.findById(req.params.id).populate('category');
-      
-
-      res.render("admin/categories/edit", {
+       res.render("admin/categories/edit", {
           layout:"adminlayout",
           category,
           products,

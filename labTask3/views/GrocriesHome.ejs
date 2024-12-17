@@ -26,9 +26,9 @@
   <div class="container my-5">
     <h2 class="mb-4">Grocries Items</h2>
     
-    <!-- Filter and Sort Section -->
+    
     <div class="d-flex justify-content-between   mb-4">
-      <!-- Filter Dropdown -->
+      
       <div class="dropdown">
         <button class="  btn btn-outline-secondary text-black border-secondary-subtle  filter-sort-wrapper dropdown-toggle"style="padding-right:110px;"  type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false" >
           <i class="icon fa-solid fa-sliders pe-1" ></i> Filter
@@ -40,7 +40,7 @@
         </ul>
       </div>
 
-      <!-- Sort By Dropdown -->
+      
       <div class="dropdown">
         <button class="btn btn-outline-secondary text-black border-secondary-subtle custom-dropdown-btn dropdown-toggle"style="padding-right:110px;" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-solid fa-sort pe-1"></i> Sort by
@@ -57,7 +57,7 @@
       <% if (productsByCategory && Object.keys(productsByCategory).length > 0) { %>
         <% for (let category in productsByCategory) { %>
           <div class="container mt-5">
-            <h2 class="mb-4"><%= category %></h2> <!-- Category Title -->
+            <h2 class="mb-4"><%= category %></h2> 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
               <% productsByCategory[category].forEach(product => { %>
                 <div class="col">
