@@ -4,10 +4,13 @@ const expressEjsLayouts = require('express-ejs-layouts');
 const path = require('path');
 const session = require('express-session');
 const server = express();
+const middleware = require("./middlewares/ensureAutheticated");
 
 
 server.set('view engine', 'ejs');
 server.use(expressEjsLayouts);
+
+server.use(express.urlencoded({ extended: true }));
 
 server.use(express.json());
 
@@ -43,9 +46,7 @@ server.set('views', path.join(__dirname, 'views'));
 const groceriesRouter = require('./routes/user/user.products.controller');
 server.use('/', groceriesRouter);
 
-server.get("/", (req, res) => {
-  return res.render("morrisons");
-});
+
 
 
 server.get('/admin', (req, res) => {
@@ -73,6 +74,12 @@ mongoose
   .connect(connectionString)
   .then(() => console.log('Connected to Mongo DB Server: ' + connectionString))
   .catch((error) => console.log(error.message));
+
+  server.get("/", middleware ,(req, res) => {
+    console.log(req.session.userId);
+    return res.render("morrisons");
+  });
+
 
 const port = 5000;
 server.listen(port, () => {

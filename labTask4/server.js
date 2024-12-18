@@ -2,35 +2,60 @@ const express = require('express');
 const mongoose = require('mongoose');
 const expressEjsLayouts = require('express-ejs-layouts');
 const path = require('path');
+const session = require('express-session');
+const ensureAuthenticated = require('./middlewares/ensureAuthenticated'); 
+
 const server = express();
 
 
 server.set('view engine', 'ejs');
 server.use(expressEjsLayouts);
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
 
 server.use(express.static(path.join(__dirname, 'public')));
 server.set('views', path.join(__dirname, 'views'));
 
 
-server.use(express.urlencoded({ extended: true }));
+
+
+server.use(
+  session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
 
 const groceriesRouter = require('./routes/user/user.products.controller');
 server.use('/', groceriesRouter);
 
-server.get("/", (req, res) => {
-  return res.render("morrisons");
+const ensureAuthenticated = (req, res, next) => {
+  if (req.session.userId) {
+    return next();
+  }
+  res.redirect('/login');
+};
+
+
+
+
+
+server.get('/', ensureAuthenticated, (req, res) => {
+  res.render('morrisons');
 });
 
 
-server.get('/admin', (req, res) => {
+server.get('/admin',ensureAuthenticated, (req, res) => {
   res.render("admin/adminPanel", {
       layout: "adminlayout", 
       pageTitle: "Admin Panel"
   });
 });
 
-server.get('/admin/adminPanel', (req, res) =>{
+server.get('/admin/adminPanel',ensureAuthenticated, (req, res) =>{
 res.render("admin/adminPanel", {
   layout: "adminlayout" ,
   pageTitle: "Admin Panel"

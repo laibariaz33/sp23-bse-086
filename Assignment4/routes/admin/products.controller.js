@@ -22,22 +22,19 @@ const upload = multer({ storage: storage });
 router.get("/admin/products", async (req, res) => {
   try {
     const { query } = req.query; 
-    
-    let filter = {};
+    let filter = {}; 
 
-   
     if (query) {
-      
-      const categoryMatch = await Category.findOne({
-        name: { $regex: query, $options: 'i' },
-      });
-
      
-      if (categoryMatch) {
-        filter.category = categoryMatch._id; 
-       
-        filter.name = { $regex: query, $options: 'i' }; 
-      }
+      const regexQuery = { $regex: query, $options: 'i' };
+
+      
+      filter = {
+        $or: [
+          { name: regexQuery }, 
+          { 'category.name': regexQuery } 
+        ]
+      };
     }
 
     
@@ -46,19 +43,20 @@ router.get("/admin/products", async (req, res) => {
     
     const categories = await Category.find();
 
-    
+   
     res.render("admin/products/index", {
       pageTitle: "Products",
       layout: "adminlayout",
       products,
-      categories, 
-      query,      
+      categories,
+      query, 
     });
   } catch (error) {
     console.error(error);
     res.status(500).send("Error fetching products");
   }
 });
+
 
 
 

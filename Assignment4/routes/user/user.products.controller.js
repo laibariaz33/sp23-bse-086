@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+
 let Product = require("../../models/products");
 let Category = require("../../models/categories");
 let Order = require("../../models/order");
+const User = require('../../models/user');
 
 router.get('/GrocriesHome/:page?', async (req, res) => {
   try {
@@ -146,11 +147,88 @@ router.post('/place-order', (req, res) => {
     });
 });
 
-// router.get('/orderConfirmation', (req, res) => {
-//   res.render('orderConfirmation', {layout:false});
-  
-// });
 
+
+router.get('/register', (req, res) => {
+  res.render('register', { layout: false });
+});
+
+
+
+
+router.post('/register', async (req, res) => {
+  try {
+    const { username, email, password } = req.body;
+console.log(req.body);
+   
+    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+    if (existingUser) {
+      return res.status(400).send('User already exists. Please log in.');
+    }
+
+    
+    if (!username) {
+      return res.status(400).send('Username is required');
+    }
+    if (!email) {
+      return res.status(400).send('Email is required');
+    }
+    if (!password) {
+      return res.status(400).send('Password is required');
+    }
+
+    
+    const newUser = new User({ username, email, password });
+    await newUser.save();
+
+    
+    res.redirect('/login');
+  } catch (error) {
+    console.error('Error during registration:', error.message);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+router.get('/login', (req, res) => {
+  res.render('login', { layout: false });
+});
+
+router.post('/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+   
+    const user = await User.findOne({
+      $or: [{ username }, { email: username }],
+    });
+
+    if (!user || user.password !== password) {
+      return res.status(401).send('Invalid credentials. Please try again.');
+    }
+
+   
+    req.session.userId = user._id;
+
+  
+    res.redirect('/');
+  } catch (error) {
+    console.error('Error during login:', error.message);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
+router.get('/logout', (req, res) => {
+  
+  req.session.destroy((err) => {
+    if (err) {
+      return res.redirect('/error'); 
+    }
+    res.redirect('/login'); 
+  });
+});
 
 
 module.exports = router;
