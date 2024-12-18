@@ -1,0 +1,67 @@
+<!-- views/admin/products/edit.ejs -->
+
+<h4>Edit Product</h4>
+
+<form action="/admin/products/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="productTitle">Product Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="productTitle"
+      name="name"
+      value="<%= product.name %>"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="productDescription">Description</label>
+    <textarea
+      class="form-control"
+      id="productDescription"
+      name="description"
+      rows="3"
+    ><%= product.description %></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="productPrice">Price</label>
+    <input
+      type="number"
+      class="form-control"
+      id="productPrice"
+      name="price"
+      value="<%= product.price %>"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="productCategory">Category</label>
+    <select class="form-control" id="productCategory" name="categoryId">
+      <% categories.forEach(category => { %>
+        <option value="<%= category._id %>" 
+          <%= product.category && product.category.equals(category._id) ? 'selected' : '' %> >
+          <%= category.name %>
+        </option>
+      <% }); %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="productImage">Product Image</label>
+    <input
+      type="file"
+      class="form-control mt-2 mb-3"
+      id="productImage"
+      name="productImage"
+      accept="image/*"
+    />
+    <% if (product.image) { %>
+      <div>
+        <img src="<%= product.image %>" alt="<%= product.name %>" width="100" height="100">
+      </div>
+    <% } %>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-2">Save Changes</button>
+</form>
